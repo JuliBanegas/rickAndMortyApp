@@ -1,0 +1,62 @@
+/* Generals */
+body {
+  background-color: #b8e68b;
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 16px;
+}
+/* Generals */
+
+/* NavBar */
+nav {
+  margin-bottom: 20px;
+}
+
+.nav__container {
+  align-items: center;
+  background-color: #303055;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__container > a {
+  font-size: 35px;
+  margin-left: 10px;
+}
+
+.brand__logo {
+  color: white;
+  font-size: 24px;
+  padding: 0 15px;
+  text-decoration: none;
+}
+
+.nav__links {
+  align-items: center;
+  display: flex;
+  margin-right: 15px;
+}
+
+.nav__links ul {
+  align-items: center;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__links li {
+  margin: 0 10px;
+  list-style: none;
+}
+
+.nav__links a {
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.nav__links .brand__logo {
+  margin-right: auto;
+}
+/* NavBar */
