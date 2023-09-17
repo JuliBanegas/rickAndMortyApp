@@ -64,3 +64,40 @@ const renderCharacterCards = (arr) => {
 
   root.innerHTML = cards.join("");
 };
+
+const managePageNavigation = async (promise) => {
+  const result = await promise;
+
+  nextPage.addEventListener("click", () => {
+    if (pages < result.info.pages) {
+      pages += 1;
+      fetchCharactersData();
+    }
+  });
+
+  previusPage.addEventListener("click", () => {
+    if (pages > 1) {
+      pages -= 1;
+      fetchCharactersData();
+    }
+  });
+
+  lastPage.addEventListener("click", () => {
+    if (pages < result.info.pages) {
+      pages = result.info.pages;
+      fetchCharactersData();
+    }
+  });
+
+  firstPage.addEventListener("click", () => {
+    if (pages > 1) {
+      pages = 1;
+      fetchCharactersData();
+    }
+  });
+};
+
+const updatePaginationButtons = () => {
+  previusPage.disabled = firstPage.disabled = pages <= 1;
+  nextPage.disabled = lastPage.disabled = pages === total;
+};
