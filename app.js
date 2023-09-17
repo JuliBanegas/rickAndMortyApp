@@ -42,3 +42,25 @@ const fetchCharactersData = async () => {
 
   return json;
 };
+
+const renderCharacterCards = (arr) => {
+  const cards = arr.map(
+    (character) => `
+    <div class="card">
+      <div class="card-image">
+        <img src=${character.image}>
+      </div>
+      <div class="card-content">
+        <p><strong>Nombre:</strong> ${character.name}</p>
+        <p><strong>Género:</strong> ${character.gender}</p>
+        <p><strong>Especie:</strong> ${character.species}</p>
+        <p><strong>Estado:</strong> ${character.status}</p>
+        <p><strong>Origen:</strong> ${character.origin.name}</p>
+        <p><strong>Ubicación:</strong> ${character.location.name}</p>
+      </div>
+    </div>
+  `
+  );
+
+  root.innerHTML = cards.join("");
+};
