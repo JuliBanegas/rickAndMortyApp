@@ -43,5 +43,46 @@
       </div>
       <div id="root" class="grid hide__spinner"></div>
     </main>
+
+    <div class="container__page-counter">
+      <p><span id="current-page"></span>/<span id="all-pages"></span></p>
+    </div>
+
+    <div class="pagination__container">
+      <button
+        type="button"
+        id="first-page"
+        class="pagination__button"
+        aria-label="Start page"
+      >
+        <p>Start</p>
+      </button>
+      <button
+        type="button"
+        id="previus-page"
+        class="pagination__button"
+        aria-label="Previous page"
+      >
+        <span class="arrow left-arrow"></span>
+        Previous
+      </button>
+      <button
+        type="button"
+        id="next-page"
+        class="pagination__button"
+        aria-label="Next page"
+      >
+        Next
+        <span class="arrow right-arrow"></span>
+      </button>
+      <button
+        type="button"
+        id="last-page"
+        class="pagination__button"
+        aria-label="Last page"
+      >
+        End
+      </button>
+    </div>
   </body>
 </html>

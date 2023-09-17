@@ -61,6 +61,62 @@ nav {
 }
 /* NavBar */
 
+/* Pagination */
+.container__page-counter {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  font-weight: 500;
+  justify-content: center;
+  margin: 5px;
+}
+
+.pagination__container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.pagination__button {
+  align-items: center;
+  background-color: white;
+  border: 1px solid #757575;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 18px;
+  font-size: 20px;
+  font-weight: 600;
+  height: 40px;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 10px;
+  width: 100px;
+}
+
+.pagination__button:hover {
+  background-color: #f0f0f0;
+}
+
+.arrow {
+  border: solid #333;
+  border-width: 0 2px 2px 0;
+  height: 10px;
+  margin: 0;
+  width: 10px;
+}
+
+.left-arrow {
+  transform: rotate(135deg);
+}
+
+.right-arrow {
+  transform: rotate(-45deg);
+}
+/* Pagination */
+
 /* Spinner */
 .spinner_container {
   width: 100%;
