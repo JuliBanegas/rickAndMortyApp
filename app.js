@@ -15,3 +15,30 @@ const womenCharacters = document.getElementById("female-characters");
 let data = {};
 let pages = 1;
 let total = 0;
+
+const fetchCharactersData = async () => {
+  const url = `https://rickandmortyapi.com/api/character?page=${pages}`;
+  const response = await fetch(url);
+  const json = await response.json();
+
+  total = json.info.pages;
+  currentPage.innerHTML = pages;
+  allPages.innerHTML = total;
+  data = json;
+
+  const printPromise = new Promise((resolve) => {
+    requestAnimationFrame(() => {
+      renderCharacterCards(json.results);
+      resolve();
+    });
+  });
+
+  await Promise.all([printPromise]);
+
+  updatePaginationButtons();
+
+  root.classList.remove("hide__spinner");
+  spinner.classList.add("hide__spinner");
+
+  return json;
+};
