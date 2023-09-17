@@ -101,3 +101,25 @@ const updatePaginationButtons = () => {
   previusPage.disabled = firstPage.disabled = pages <= 1;
   nextPage.disabled = lastPage.disabled = pages === total;
 };
+
+const filterAndPrintCharacters = (gender) => {
+  const arr = data.results;
+  const filteredCharacters = gender
+    ? arr.filter((character) => character.gender === gender)
+    : arr;
+  renderCharacterCards(filteredCharacters);
+};
+
+womenCharacters.addEventListener("click", () => {
+  filterAndPrintCharacters("Female");
+});
+
+menCharacters.addEventListener("click", () => {
+  filterAndPrintCharacters("Male");
+});
+
+charactersList.addEventListener("click", () => {
+  filterAndPrintCharacters(null);
+});
+
+managePageNavigation(fetchCharactersData());
