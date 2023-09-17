@@ -148,3 +148,14 @@ nav {
   display: none;
 }
 /* Spinner */
+
+/* Footer */
+.footer__container {
+  align-items: center;
+  background-color: #303055;
+  color: white;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+}
+/* Footer */
