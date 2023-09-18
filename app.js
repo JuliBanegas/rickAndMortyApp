@@ -11,6 +11,8 @@ const previusPage = document.getElementById("previus-page");
 const charactersList = document.getElementById("characters");
 const menCharacters = document.getElementById("male-characters");
 const womenCharacters = document.getElementById("female-characters");
+const unknownCharacters = document.getElementById("unknown-characters");
+const genderlessCharacters = document.getElementById("genderless-characters");
 
 let data = {};
 let pages = 1;
@@ -104,6 +106,7 @@ const updatePaginationButtons = () => {
 
 const filterAndPrintCharacters = (gender) => {
   const arr = data.results;
+  console.log(arr);
   const filteredCharacters = gender
     ? arr.filter((character) => character.gender === gender)
     : arr;
@@ -120,6 +123,14 @@ menCharacters.addEventListener("click", () => {
 
 charactersList.addEventListener("click", () => {
   filterAndPrintCharacters(null);
+});
+
+unknownCharacters.addEventListener("click", () => {
+  filterAndPrintCharacters("unknown");
+});
+
+genderlessCharacters.addEventListener("click", () => {
+  filterAndPrintCharacters("Genderless");
 });
 
 managePageNavigation(fetchCharactersData());
