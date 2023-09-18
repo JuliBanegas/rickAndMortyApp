@@ -215,3 +215,48 @@ nav {
   justify-content: center;
 }
 /* Footer */
+
+/* Estilos para dispositivos móviles (menos de 810px) */
+@media screen and (max-width: 810px) {
+  /* NavBar */
+  .nav__container {
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .brand__logo {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .nav__links {
+    margin-right: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .nav__links li {
+    margin: 5px 0;
+    margin-right: 10px;
+  }
+
+  .nav__links a {
+    font-size: 18px;
+  }
+
+  /* Grid & Cards */
+  .grid {
+    justify-content: center;
+  }
+
+  .card {
+    margin: 10px;
+    width: 300px;
+  }
+
+  .card-content p {
+    font-size: 18px;
+  }
+}
+/* Estilos para dispositivos móviles (menos de 810px) */
