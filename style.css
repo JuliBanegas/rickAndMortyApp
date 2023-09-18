@@ -4,6 +4,10 @@ body {
   font-family: "Patrick Hand SC", cursive;
   font-size: 16px;
 }
+
+.general__container {
+  min-height: 100vh;
+}
 /* Generals */
 
 /* NavBar */
