@@ -216,7 +216,7 @@ nav {
 }
 /* Footer */
 
-/* Estilos para dispositivos móviles (menos de 810px) */
+/* (mobile < 810px) */
 @media screen and (max-width: 810px) {
   /* NavBar */
   .nav__container {
@@ -259,4 +259,25 @@ nav {
     font-size: 18px;
   }
 }
-/* Estilos para dispositivos móviles (menos de 810px) */
+/* (mobile < 810px) */
+
+/* Not found */
+.no-results {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #303055;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #333;
+  margin: 10px auto;
+  max-width: 300px;
+  padding: 50px;
+  text-align: center;
+}
+
+.no-results p {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+/* Not found */
