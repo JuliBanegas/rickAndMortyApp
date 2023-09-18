@@ -19,6 +19,13 @@ let data = {};
 let pages = 1;
 let total = 0;
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 const fetchCharactersData = async () => {
   const url = `https://rickandmortyapi.com/api/character?page=${pages}`;
   const response = await fetch(url);
@@ -76,6 +83,7 @@ const managePageNavigation = async (promise) => {
       pages += 1;
       fetchCharactersData();
       noResultsMessage.style.display = "none";
+      scrollToTop();
     }
   });
 
@@ -84,6 +92,7 @@ const managePageNavigation = async (promise) => {
       pages -= 1;
       fetchCharactersData();
       noResultsMessage.style.display = "none";
+      scrollToTop();
     }
   });
 
@@ -92,6 +101,7 @@ const managePageNavigation = async (promise) => {
       pages = result.info.pages;
       fetchCharactersData();
       noResultsMessage.style.display = "none";
+      scrollToTop();
     }
   });
 
@@ -100,6 +110,7 @@ const managePageNavigation = async (promise) => {
       pages = 1;
       fetchCharactersData();
       noResultsMessage.style.display = "none";
+      scrollToTop();
     }
   });
 };
