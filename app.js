@@ -1,5 +1,6 @@
 const root = document.getElementById("root");
 const spinner = document.getElementById("spinner-container");
+const noResultsMessage = document.querySelector(".no-results");
 
 const allPages = document.getElementById("all-pages");
 const currentPage = document.getElementById("current-page");
@@ -74,6 +75,7 @@ const managePageNavigation = async (promise) => {
     if (pages < result.info.pages) {
       pages += 1;
       fetchCharactersData();
+      noResultsMessage.style.display = "none";
     }
   });
 
@@ -81,6 +83,7 @@ const managePageNavigation = async (promise) => {
     if (pages > 1) {
       pages -= 1;
       fetchCharactersData();
+      noResultsMessage.style.display = "none";
     }
   });
 
@@ -88,6 +91,7 @@ const managePageNavigation = async (promise) => {
     if (pages < result.info.pages) {
       pages = result.info.pages;
       fetchCharactersData();
+      noResultsMessage.style.display = "none";
     }
   });
 
@@ -95,6 +99,7 @@ const managePageNavigation = async (promise) => {
     if (pages > 1) {
       pages = 1;
       fetchCharactersData();
+      noResultsMessage.style.display = "none";
     }
   });
 };
@@ -106,11 +111,18 @@ const updatePaginationButtons = () => {
 
 const filterAndPrintCharacters = (gender) => {
   const arr = data.results;
-  console.log(arr);
   const filteredCharacters = gender
     ? arr.filter((character) => character.gender === gender)
     : arr;
-  renderCharacterCards(filteredCharacters);
+
+  root.innerHTML = "";
+
+  if (filteredCharacters.length === 0) {
+    noResultsMessage.style.display = "block";
+  } else {
+    noResultsMessage.style.display = "none";
+    renderCharacterCards(filteredCharacters);
+  }
 };
 
 womenCharacters.addEventListener("click", () => {
