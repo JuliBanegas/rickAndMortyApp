@@ -115,6 +115,12 @@ nav {
 .right-arrow {
   transform: rotate(-45deg);
 }
+
+.pagination__button[disabled] {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
 /* Pagination */
 
 /* Grid & Cards */
